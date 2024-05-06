@@ -185,11 +185,13 @@ function createMarkup(arr) {
 <li class="list-item js-card" data-id="${id}">
 <img class="list-img" src="${img}" alt="${name}" />
 <h2 class="list-title">${name}</h2>
-<p ><a href="#" class="js-info">More info</a></p>
-<p>${price} грн.</p>
+<p class="list-link">
+<a href="#" class="js-info">More info</a>
+</p>
+<p >${price} грн.</p>
 <div class="list-btn">
-  <button>Add to favorite</button>
-  <button>Add to cart</button>
+<button class="js-favorite">Add to favorite</button>
+<button class="js-cart">Add to cart</button>
 </div>
 </li>
 `
@@ -207,10 +209,26 @@ function onClick(event) {
     const { id } = event.target.closest('.js-card').dataset;
     const product = findProduct(Number(id));
     const instance = basicLightbox.create(`
-	<h1>Dynamic Content</h1>
-	<p>You can set the content of the lightbox with JS.</p>
+    <div class="modal-item">
+    <img src="${product.img}" alt="${product.name}" width="300" >
+    <h2 class="list-title">${product.name}</h2>
+    <h3>${product.price} грн.</h3>
+    <p class="list-text">${product.description}</p>
+    <div class="list-btn">
+      <button class="js-favorite">Add to favorite</button>
+      <button class="js-cart">Add to cart</button>
+    </div>
+  </div>
 `);
     instance.show();
+  }
+  if (event.target.classList.contains('js-cart')) {
+    const { id } = event.target.closest('.js-card').dataset;
+    const product = findProduct(Number(id));
+  }
+  if (event.target.classList.contains('js-favorite')) {
+    const { id } = event.target.closest('.js-card').dataset;
+    const product = findProduct(Number(id));
   }
 }
 
