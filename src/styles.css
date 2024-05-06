@@ -88,6 +88,7 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+  row-gap: 80px;
   justify-items: center;
   padding: 20px;
 }
@@ -96,6 +97,10 @@ a:hover {
   width: 100%;
   max-width: 300px;
   text-align: center;
+  border: 2px solid var(--accent-color);
+  background-color: var(--primary-background-color); 
+  padding: 30px; 
+  border-radius: 10px; 
 }
 
 .list-img {
