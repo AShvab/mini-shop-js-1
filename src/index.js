@@ -174,8 +174,13 @@ const products = [
   },
 ];
 
+const KEY_FAVORITE = 'favorite'
+const KEY_CART = 'cart'
 const search = document.querySelector('.js-search');
 const list = document.querySelector('.js-list');
+const favoriteArr = JSON.parse(localStorage.getItem(KEY_FAVORITE)) ?? [];
+const cartArr = JSON.parse(localStorage.getItem(KEY_CART)) ?? [];
+
 
 function createMarkup(arr) {
   const markup = arr
@@ -225,10 +230,14 @@ function onClick(event) {
   if (event.target.classList.contains('js-cart')) {
     const { id } = event.target.closest('.js-card').dataset;
     const product = findProduct(Number(id));
+    cartArr.push(product);
+    localStorage.setItem(KEY_CART, JSON.stringify(cartArr))
   }
   if (event.target.classList.contains('js-favorite')) {
     const { id } = event.target.closest('.js-card').dataset;
     const product = findProduct(Number(id));
+    favoriteArr.push(product);
+    localStorage.setItem(KEY_FAVORITE, JSON.stringify(favoriteArr))
   }
 }
 
