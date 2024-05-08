@@ -1,6 +1,9 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 
+import { common } from './common';
+import { createMarkup } from './helpers/createMarkup';
+
 const products = [
   {
     id: 1,
@@ -174,37 +177,13 @@ const products = [
   },
 ];
 
-const KEY_FAVORITE = 'favorite'
-const KEY_CART = 'cart'
 const search = document.querySelector('.js-search');
 const list = document.querySelector('.js-list');
-const favoriteArr = JSON.parse(localStorage.getItem(KEY_FAVORITE)) ?? [];
-const cartArr = JSON.parse(localStorage.getItem(KEY_CART)) ?? [];
+const favoriteArr = JSON.parse(localStorage.getItem(common.KEY_FAVORITE)) ?? [];
+const cartArr = JSON.parse(localStorage.getItem(common.KEY_CART)) ?? [];
 
 
-function createMarkup(arr) {
-  const markup = arr
-    .map(
-      ({ id, img, name, price }) =>
-        `
-<li class="list-item js-card" data-id="${id}">
-<img class="list-img" src="${img}" alt="${name}" />
-<h2 class="list-title">${name}</h2>
-<p class="list-link">
-<a href="#" class="js-info">More info</a>
-</p>
-<p >${price} грн.</p>
-<div class="list-btn">
-<button class="js-favorite">Add to favorite</button>
-<button class="js-cart">Add to cart</button>
-</div>
-</li>
-`
-    )
-    .join('');
-  list.innerHTML = markup;
-}
-createMarkup(products);
+createMarkup(products, list);
 
 list.addEventListener('click', onClick);
 
@@ -231,13 +210,17 @@ function onClick(event) {
     const { id } = event.target.closest('.js-card').dataset;
     const product = findProduct(Number(id));
     cartArr.push(product);
-    localStorage.setItem(KEY_CART, JSON.stringify(cartArr))
+    localStorage.setItem(common.KEY_CART, JSON.stringify(cartArr));
   }
   if (event.target.classList.contains('js-favorite')) {
     const { id } = event.target.closest('.js-card').dataset;
     const product = findProduct(Number(id));
+    const inStorage = favoriteArr.some(({ id }) => id === product.id);
+    if (inStorage) {
+      return;
+    }
     favoriteArr.push(product);
-    localStorage.setItem(KEY_FAVORITE, JSON.stringify(favoriteArr))
+    localStorage.setItem(common.KEY_FAVORITE, JSON.stringify(favoriteArr));
   }
 }
 
