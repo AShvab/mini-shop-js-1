@@ -1,6 +1,8 @@
 
 function createMarkup(arr, list) {
-    const markup = arr
+  let markup;
+  if(arr.length){
+    markup = arr
       .map(
         ({ id, img, name, price }) =>
           `
@@ -19,6 +21,11 @@ function createMarkup(arr, list) {
   `
       )
       .join('');
+    }else{
+      markup = `<li >
+      <img class="list-img" src="https://wallpapercave.com/wp/wp2013401.jpg" alt="404" width="600"/>
+      </li>`
+    }
     list.innerHTML = markup;
   }
 
