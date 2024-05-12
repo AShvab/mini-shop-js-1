@@ -3,12 +3,15 @@ import { createFavoriteMarkup } from './helpers/createMarkup';
 import { createModal } from './helpers/createModal';
 import { products } from './helpers/products';
 
+
+
 const list = document.querySelector('.js-list');
 
 const favorite = JSON.parse(localStorage.getItem(common.KEY_FAVORITE)) ?? [];
 createFavoriteMarkup(favorite, list);
 
 list.addEventListener('click', onClick);
+list.addEventListener('click', onDeleteClick);
 
 function onClick(event) {
   event.preventDefault();
@@ -41,4 +44,4 @@ function findProduct(productId) {
   return products.find(({ id }) => id === productId);
 }
 
-list.addEventListener('click', onDeleteClick);
+
