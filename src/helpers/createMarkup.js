@@ -63,13 +63,13 @@ function createCartMarkup(arr, list) {
   if (arr.length) {
     markup = arr
       .map(
-        ({ id, name, price }) =>
+        ({ id, name, price, quantity }) =>
           `
       <li class="list-item js-card" data-id="${id}">
      
       <h2 class="list-title">${name}</h2>
       <div class="quantity-square">
-      <input type="number" class="quantity js-quantity " value="1" min="1">
+      <input type="number" class="quantity js-quantity " value="${quantity}" min="1">
     </div>
       <p class="js-price">${price} грн.</p>
       <p class="js-total"></p>

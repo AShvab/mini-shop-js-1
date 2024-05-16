@@ -4,6 +4,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test1',
       price: 1000,
+      quantity: 1,
       description:
         'Повний і збалансований склад, багатий на вітаміни та мінерали.',
     },
@@ -12,6 +13,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test2',
       price: 1000,
+      quantity: 1,
       description: 'Смачний та корисний корм з найкращих рибних інгредієнтів.',
     },
     {
@@ -19,6 +21,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test3',
       price: 1000,
+      quantity: 1,
       description:
         "Спеціально розроблений для підтримки здоров'я зубів гризунів.",
     },
@@ -27,6 +30,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test4',
       price: 1000,
+      quantity: 1,
       description: 'test description',
     },
     {
@@ -34,6 +38,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test5',
       price: 1000,
+      quantity: 1,
       description: 'test description',
     },
     {
@@ -41,6 +46,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test6',
       price: 1000,
+      quantity: 1,
       description: 'test description',
     },
     {
@@ -48,6 +54,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test7',
       price: 1000,
+      quantity: 1,
       description: 'test description',
     },
     {
@@ -55,6 +62,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test8',
       price: 1000,
+      quantity: 1,
       description: 'test description',
     },
     {
@@ -62,6 +70,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test9',
       price: 1000,
+      quantity: 1,
       description: 'test description',
     },
     {
@@ -69,6 +78,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test10',
       price: 1000,
+      quantity: 1,
       description: 'test description',
     },
     {
@@ -76,6 +86,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test11',
       price: 1000,
+      quantity: 1,
       description: 'test description',
     },
     {
@@ -83,6 +94,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test12',
       price: 1000,
+      quantity: 1,
       description: 'test description',
     },
     {
@@ -90,6 +102,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test13',
       price: 1000,
+      quantity: 1,
       description: 'test description',
     },
     {
@@ -97,6 +110,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test14',
       price: 1000,
+      quantity: 1,
       description: 'test description',
     },
     {
@@ -104,6 +118,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test15',
       price: 1000,
+      quantity: 1,
       description: 'test description',
     },
     {
@@ -111,6 +126,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test16',
       price: 1000,
+      quantity: 1,
       description: 'test description',
     },
     {
@@ -118,6 +134,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test17',
       price: 1000,
+      quantity: 1,
       description: 'test description',
     },
     {
@@ -125,6 +142,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test18',
       price: 1000,
+      quantity: 1,
       description: 'test description',
     },
     {
@@ -132,6 +150,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test19',
       price: 1000,
+      quantity: 1,
       description: 'test description',
     },
     {
@@ -139,6 +158,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test20',
       price: 1000,
+      quantity: 1,
       description: 'test description',
     },
     {
@@ -146,6 +166,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test21',
       price: 1000,
+      quantity: 1,
       description: 'test description',
     },
     {
@@ -153,6 +174,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test22',
       price: 1000,
+      quantity: 1,
       description: 'test description',
     },
     {
@@ -160,6 +182,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test23',
       price: 1000,
+      quantity: 1,
       description: 'test description',
     },
     {
@@ -167,6 +190,7 @@ const products = [
       img: 'https://via.placeholder.com/150',
       name: 'test24',
       price: 1000,
+      quantity: 1,
       description: 'test description',
     },
   ];
