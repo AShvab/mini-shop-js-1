@@ -1,6 +1,6 @@
 import { common } from './common';
 import { createCartMarkup } from './helpers/createMarkup';
-import { createModal } from './helpers/createModal';
+
 import { products } from './helpers/products';
 
 const list = document.querySelector('.js-list');
