@@ -58,6 +58,37 @@ function createFavoriteMarkup(arr, list) {
   list.innerHTML = markup;
 }
 
+// function createCartMarkup(arr, list) {
+//   let markup;
+//   if (arr.length) {
+//     markup = arr
+//       .map(
+//         ({ id, name, price, quantity }) =>
+//           `
+//       <li class="list-item js-card" data-id="${id}">
+
+//       <h2 class="list-title">${name}</h2>
+//       <div class="quantity-square">
+//       <input type="number" class="quantity js-quantity " value="${quantity}" min="1">
+//     </div>
+
+//       <p class="js-total">price: ${price * quantity} грн.</p>
+//       <div class="list-btn">
+//       <button class="js-delete">Delete</button>
+//       <button class="js-cart">Buy now</button>
+//       </div>
+//       </li>
+
+//       `
+//       )
+//       .join('');
+//   } else {
+//     markup = `<li >
+//           <img class="list-img" src="https://www.gmuprinthub.com/content/images/empty-cart.png" alt="404" style="width: 500px; height: auto;"/>
+//           </li>`;
+//   }
+//   list.innerHTML = markup;
+// }
 function createCartMarkup(arr, list) {
   let markup;
   if (arr.length) {
@@ -66,25 +97,24 @@ function createCartMarkup(arr, list) {
         ({ id, name, price, quantity }) =>
           `
       <li class="list-item js-card" data-id="${id}">
-     
-      <h2 class="list-title">${name}</h2>
-      <div class="quantity-square">
-      <input type="number" class="quantity js-quantity " value="${quantity}" min="1">
-    </div>
-      
-      <p class="js-total">price: ${price * quantity} грн.</p>
-      <div class="list-btn">
-      <button class="js-delete">Delete</button>
-      <button class="js-cart">Buy now</button>
-      </div>
+        <h2 class="list-title">${name}</h2>
+        <div class="quantity-square">
+          <input type="number" class="quantity js-quantity" value="${quantity}" min="1">
+        </div>
+        <p class="js-total">price: ${price * quantity} грн.</p>
+        <div class="list-btn">
+          <button class="js-delete">Delete</button>
+        </div>
       </li>
       `
       )
       .join('');
   } else {
-    markup = `<li >
-          <img class="list-img" src="https://www.gmuprinthub.com/content/images/empty-cart.png" alt="404" style="width: 500px; height: auto;"/>
-          </li>`;
+    markup = `
+      <li>
+        <img class="list-img" src="https://www.gmuprinthub.com/content/images/empty-cart.png" alt="404" style="width: 500px; height: auto;"/>
+      </li>
+    `;
   }
   list.innerHTML = markup;
 }
