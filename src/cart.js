@@ -11,6 +11,7 @@ createCartMarkup(cart, list);
 
 
 list.addEventListener('click', onDeleteClick);
+list.addEventListener('input', onQuantityChange);
 
 function onDeleteClick(event) {
     event.preventDefault();
@@ -36,5 +37,21 @@ function onDeleteClick(event) {
   }
  
 
+  function onQuantityChange(event) {
+    if (event.target.classList.contains('js-quantity')) {
+      const { id } = event.target.closest('.js-card').dataset;
+      const productId = Number(id);
+      const productIndex = cart.findIndex(item => item.id === productId);
   
+      if (productIndex !== -1) {
+        const newQuantity = parseInt(event.target.value);
+        cart[productIndex].quantity = newQuantity;
+        const totalPriceElement = event.target.closest('.js-card').querySelector('.js-total');
+        const totalPrice = newQuantity * cart[productIndex].price;
+        totalPriceElement.textContent = `price: ${totalPrice} грн.`;
+  
+        localStorage.setItem(common.KEY_CART, JSON.stringify(cart));
+      }
+    }
+  }
   

@@ -1,12 +1,12 @@
 import { common } from './common';
-import { createFavoriteMarkup } from './helpers/createMarkup';
+import { createCartMarkup, createFavoriteMarkup } from './helpers/createMarkup';
 import { createModal } from './helpers/createModal';
 import { products } from './helpers/products';
 
 
 
 const list = document.querySelector('.js-list');
-
+const cartArr = JSON.parse(localStorage.getItem(common.KEY_CART)) ?? [];
 const favorite = JSON.parse(localStorage.getItem(common.KEY_FAVORITE)) ?? [];
 createFavoriteMarkup(favorite, list);
 

@@ -41,7 +41,7 @@ function createFavoriteMarkup(arr, list) {
     <p class="list-link">
     <a href="#" class="js-info">More info</a>
     </p>
-    <p >${price} грн.</p>
+    <p>price: ${price} грн.</p>
     <div class="list-btn">
     <button class="js-delete">Delete</button>
     <button class="js-cart">Add to cart</button>
@@ -71,8 +71,8 @@ function createCartMarkup(arr, list) {
       <div class="quantity-square">
       <input type="number" class="quantity js-quantity " value="${quantity}" min="1">
     </div>
-      <p class="js-price">${price} грн.</p>
-      <p class="js-total"></p>
+      
+      <p class="js-total">price: ${price * quantity} грн.</p>
       <div class="list-btn">
       <button class="js-delete">Delete</button>
       <button class="js-cart">Buy now</button>

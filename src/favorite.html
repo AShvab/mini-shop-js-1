@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-    <header>
-        <div>
-          <a href="./index.html">Home</a>
-          <a href="#">Favorite</a>
-          <a href="./cart.html">Cart</a>
-  
-        </div>
-  
-      </header>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      
+      <div class="nav-left">
+        <a href="./index.html">Home</a>
+        <a href="#" class="current">Favorite</a>
+      </div>
+
+      <div class="nav-right">
+        <a href="./cart.html">Cart</a>
+      </div>
+    </header>
     <ul class="list js-list"></ul>
     <script src="./favorite.js" type="module"></script>
-</body>
+  </body>
 </html>
