@@ -5,14 +5,32 @@ import { products } from './helpers/products';
 
 import 'basiclightbox/dist/basicLightbox.min.css';
 
-const search = document.querySelector('.js-search');
+const searchForm = document.querySelector('.form-search');
+const searchInput = document.querySelector('.js-search');
 const list = document.querySelector('.js-list');
 const favoriteArr = JSON.parse(localStorage.getItem(common.KEY_FAVORITE)) ?? [];
 const cartArr = JSON.parse(localStorage.getItem(common.KEY_CART)) ?? [];
 
 createMarkup(products, list);
 
+searchForm.addEventListener('submit', onSearch);
 list.addEventListener('click', onClick);
+
+function onSearch(event) {
+  event.preventDefault();
+  const query = searchInput.value.trim().toLowerCase();
+
+  if (!query) {
+    createMarkup(products, list);
+    return;
+  }
+
+  const filteredProducts = products.filter(product => 
+    product.name.toLowerCase().includes(query)
+  );
+
+  createMarkup(filteredProducts, list);
+}
 
 function onClick(event) {
   event.preventDefault();
@@ -51,3 +69,4 @@ function onClick(event) {
 function findProduct(productId) {
   return products.find(({ id }) => id === productId);
 }
+
